@@ -1,4 +1,4 @@
-const apiURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
+const apiURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
 const apiKey = '&appid=59e0d5f5baf090f6f7592d8cab459b15';// Personal API Key for OpenWeatherMap API
 const unitInClsius = '&units=metric';
 
