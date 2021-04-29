@@ -5,6 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="mobile-container">
+      <main class="input-content">
+        <div class="formGroup">
+          <label for="city-zip">Enter City zip code</label>
+          <input
+            type="text"
+            id="zip"
+            name="zipCode"
+            placeholder="enter zip code here"
+          />
+        </div>
+        <div class="formGroup">
+          <label for="feelings">How are your feeling</label>
+          <input
+            type="text"
+            id="feelings"
+            name="feelings"
+            placeholder="happy!"
+          />
+        </div>
+
+        <div id="entryHolder" class="hidden">
+          <div id="date">
+            <img
+              src="media/imgs/schedule.png"
+              alt="Date: "
+              class="entryHolder__icon"
+            />
+            <p id="date_result"></p>
+          </div>
+          <div id="temp">
+            <img
+              src="media/imgs/thermometer.png"
+              alt="Temp: "
+              class="entryHolder__icon"
+            />
+            <p id="temp_result"></p>
+          </div>
+          <div id="content">
+            <img
+              src="media/imgs/feedback.png"
+              alt="Feelings: "
+              class="entryHolder__icon"
+            />
+            <p id="content_result"></p>
+          </div>
+        </div>
+      </main>
+      <button id="generate">Generate Weather</button>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
 </html>
