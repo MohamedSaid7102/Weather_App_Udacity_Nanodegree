@@ -48,8 +48,6 @@ async function getWeatherByZipCode() {
   data.ws = await weatherData.weather[0].description;
 
   postData(`/postData`, data);
-
-  console.log (data);
 }
 
 
@@ -78,16 +76,29 @@ function postData(url='', data={}){
   });
 }
 
+// function to retrieve Data from the server
+async function retrieveData(){
+  const request = await fetch('/getData');
+  try{
+    const allData = request.json();
+   return allData;
+  } catch(error){
+    ErrorEvent(error);
+  }
+}
+
 // To update the information div
-function updateUI(temp, date, feelings, ws){
-  show(output);
+async function updateUI(){
+  let data = await retrieveData();
+  console.log(data);
   // Empty search boxs
   feelingsContainer.value = zipCodeContainer.value = '';
-
-  dateOutputContainer.innerText = date;
-  tempOutputContainer.innerText = temp;
-  feelingsOutputContainer.innerText = feelings;
-  weatherStateOutputContainer.querySelector('p').innerText= ws;
+  
+  dateOutputContainer.innerText = data.date;
+  tempOutputContainer.innerText = data.temp;
+  feelingsOutputContainer.innerText = data.feelings;
+  weatherStateOutputContainer.querySelector('p').innerText= data.weatherState;
+  show(output);
 }
 
 
