@@ -1,7 +1,7 @@
 require("regenerator-runtime/runtime");
 // variable to hold the Project Data
 let projectData = {};
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 const express = require('express'); //importing express with ES6 style
 const app = express(); //instantiate an app 

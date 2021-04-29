@@ -11,9 +11,6 @@ const tempOutputContainer = document.getElementById('temp_result');
 const weatherStateOutputContainer = document.getElementById('weatherState');
 const feelingsOutputContainer = document.getElementById('content_result');
 
-// TODO: set a container for advises on the output place
-
-
 // Event listener to add function to existing HTML DOM element
 GenerateWeatherByZip.addEventListener('click',getWeatherByZipCode);
 
