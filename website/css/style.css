@@ -60,6 +60,13 @@ body {
   outline: none;
   letter-spacing: 1px;
   color: #444;
+  width: 100%;
+  max-width: 250px;
+  margin: auto;
+}
+
+.formGroup label {
+  padding-left: 0.8rem;
 }
 
 .formGroup input:focus {
@@ -110,4 +117,12 @@ body {
 #generate:active,
 #generate:hover {
   background-color: rgba(54, 198, 201, 0.788);
+}
+
+/* for Responsivness */
+@media screen and (max-width: 300px) {
+  /* .formGroup input {
+    padding: 0.2rem;
+    font-size: 0.6rem;
+  } */
 }
