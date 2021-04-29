@@ -31,7 +31,8 @@ app.post('/postData', (req, res)=>{
     temp: req.body.temp,
     date: req.body.date,
     zipCode: req.body.zipCode,
-    feelings: req.body.feelings
+    feelings: req.body.feelings,
+    weatherState: req.body.ws
   };
 
    projectData = newEntry;

@@ -8,6 +8,7 @@ const feelingsContainer = document.getElementById('feelings');
 const GenerateWeatherByZip = document.getElementById('generate');
 const dateOutputContainer = document.getElementById('date_result');
 const tempOutputContainer = document.getElementById('temp_result');
+const weatherStateOutputContainer = document.getElementById('weatherState');
 const feelingsOutputContainer = document.getElementById('content_result');
 
 // TODO: set a container for advises on the output place
@@ -44,7 +45,8 @@ async function getWeatherByZipCode() {
   }
 
   data.temp = await weatherData.main.temp;
-  
+  data.ws = await weatherData.weather[0].description;
+
   postData(`/postData`, data);
 
   console.log (data);
@@ -63,7 +65,7 @@ function postData(url='', data={}){
   .then((res)=>{ //then if the 'res' is valid convert it into json()
     res.json()
     .then((jsonRes)=>{ //if the conversion was made successfully then update the UI
-      updateUI(jsonRes.temp, jsonRes.date, jsonRes.feelings);
+      updateUI(jsonRes.temp, jsonRes.date, jsonRes.feelings,jsonRes.weatherState);
     },
     () =>{ // else if the conversion is not success then output error message
       console.log(`faild to convert response to json().`);
@@ -77,7 +79,7 @@ function postData(url='', data={}){
 }
 
 // To update the information div
-function updateUI(temp, date, feelings){
+function updateUI(temp, date, feelings, ws){
   show(output);
   // Empty search boxs
   feelingsContainer.value = zipCodeContainer.value = '';
@@ -85,7 +87,7 @@ function updateUI(temp, date, feelings){
   dateOutputContainer.innerText = date;
   tempOutputContainer.innerText = temp;
   feelingsOutputContainer.innerText = feelings;
-  
+  weatherStateOutputContainer.querySelector('p').innerText= ws;
 }
 
 
