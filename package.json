@@ -10,7 +10,9 @@
   "name": "udacitynanodegree_project_2",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
   "author": "",
   "license": "ISC",
   "description": ""
