@@ -81,7 +81,10 @@ body {
   column-gap: 2rem;
   align-items: center;
 }
-
+#content_result {
+  max-width: 100px;
+  overflow: auto;
+}
 #entryHolder {
   display: grid;
   grid-template-columns: 1fr 1fr;

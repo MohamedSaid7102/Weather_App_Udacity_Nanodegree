@@ -1,3 +1,4 @@
+require("regenerator-runtime/runtime");
 // variable to hold the Project Data
 let projectData = {};
 const port = 3001;
